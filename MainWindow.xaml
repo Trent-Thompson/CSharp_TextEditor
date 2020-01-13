@@ -1,0 +1,57 @@
+﻿<Window x:Class="WMP_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WMP_2"
+        mc:Ignorable="d"
+        Title="TreXt Editor" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Height="20">
+            <MenuItem Header="File">
+                <MenuItem Header="New" Name="New" Click="New_Click"/>
+                <MenuItem Header="Open" Name="Open" Click="Open_Click"/>
+                <MenuItem Header="Save As" Name="SaveAs" Click="SaveAs_Click"/>
+                <Separator/>
+                <MenuItem Header="Close" Click="Close_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Options">
+                <MenuItem Header="Bolding">
+                    <MenuItem Header="Bold Selection" Click="BoldSelection_Click"/>
+                    <MenuItem Header="Unbold Selection" Click="UnboldSelection_Click"/>
+                </MenuItem>
+
+                <MenuItem Header="Italics">
+                    <MenuItem Header="Italicize Selection" Click="ItalicizeSelection_Click"/>
+                    <MenuItem Header="Unitalicize Selection" Click="UnitalicizeSelection_Click"/>
+                </MenuItem>
+
+                <MenuItem Header="Fonts">
+                    <MenuItem Header="Arial" Click="Arial_Click" />
+                    <MenuItem Header="Calibri" Click="Calibri_Click"/>
+                    <MenuItem Header="Times New Roman" Click="TimesNewRoman_Click"/>
+                    <MenuItem Header="Wingdings" Click="Wingdings_Click"/>
+                </MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="Help" Name="Help">
+                <MenuItem Header="About" Name="About" Click="About_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <StatusBar Name="SBar" Height="25" DockPanel.Dock="Bottom">
+            Character Count:
+            <StatusBarItem>
+                <TextBlock Name="CharCount" Text="0" Width="50"/>
+            </StatusBarItem>
+
+            <StatusBarItem Width="60" HorizontalAlignment="Right">
+                <TextBlock Name="SaveStatus" Text="Saved" Width="50" HorizontalAlignment="Right"/>
+            </StatusBarItem>
+        </StatusBar>
+
+        <RichTextBox Name="TypingArea" TextChanged="TypingArea_TextChanged" VerticalScrollBarVisibility="Auto" FontFamily="Calibri"/>
+    </DockPanel>
+</Window>
+
